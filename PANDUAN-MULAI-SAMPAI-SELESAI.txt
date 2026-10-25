@@ -1,0 +1,33 @@
+PANDUAN SPPG SIWALAN 1 — DARI AWAL SAMPAI LOGIN
+================================================
+
+PENTING
+- Paket ini sudah mengisi konfigurasi Supabase langsung di index.html agar tidak bergantung pada file supabase-config.js yang mungkin tidak terbaca.
+- URL proyek: https://lzmyvdcbmfzcrmkcuiuj.supabase.co
+- Hanya menggunakan sb_publishable_ di frontend. Jangan pernah masukkan sb_secret_ atau service_role key.
+- Skema SQL sudah dijalankan sebelumnya menurut langkah di chat. Jangan jalankan ulang kecuali diminta setelah memeriksa error.
+- Profil admin irvvnsyh@gmail.com sudah dimasukkan ke public.profiles. Jangan membuat admin baru lagi.
+
+LANGKAH A — BUKA FOLDER YANG BENAR
+1. Ekstrak ZIP ke folder baru, misalnya Documents/SPPG-SIWALAN1-FINAL.
+2. Buka VS Code. Pilih File > Open Folder.
+3. Pilih folder sppg_siwalan1_publikasi hasil ekstrak. Jangan buka file dari tampilan ZIP.
+4. Pastikan index.html ada di panel Explorer.
+
+LANGKAH B — JALANKAN UNTUK UJI DI LAPTOP
+1. Di VS Code, buka Extensions (ikon kotak di kiri). Cari Live Server dan install jika belum ada.
+2. Klik kanan index.html > Open with Live Server.
+3. Browser terbuka. Karena konfigurasi sudah tertanam di index.html, pesan konfigurasi belum diisi seharusnya tidak muncul.
+4. Login menggunakan email admin yang sudah dibuat di Supabase Auth dan kata sandi yang ditetapkan saat membuat user.
+5. Jika lupa kata sandi, di Supabase Dashboard > Authentication > Users > pilih email admin > Send password recovery, lalu ikuti email. Jangan membuat user admin kedua.
+
+LANGKAH C — JIKA ADA ERROR
+1. Jika muncul error login atau database, tekan F12 di browser > Console, lalu salin teks errornya (jangan kirim password atau secret key).
+2. Jika pesan “Invalid API key”, pastikan publishable key aktif dan URL benar.
+3. Jika error terkait tabel/policy/RPC, kirim teks errornya sebelum menjalankan SQL lain.
+
+LANGKAH D — AGAR BISA DIPAKAI DARI HP/LAPTOP LAIN
+Live Server lokal hanya menjalankan aplikasi di laptop tersebut. Agar perangkat lain bisa membuka alamat yang sama, aplikasi harus di-hosting ke layanan HTTPS (misalnya Netlify atau Vercel) dan seluruh isi folder situs diunggah. Database tetap menggunakan proyek Supabase yang sama.
+
+PENTING TENTANG DATA
+Aplikasi memakai tabel public.app_state sebagai satu sumber data cloud untuk stok, transaksi, dan penerima manfaat. Setelah login berhasil, buat satu perubahan percobaan lalu buka dari perangkat lain setelah aplikasi dipublikasikan. Jangan menghapus tabel atau user.

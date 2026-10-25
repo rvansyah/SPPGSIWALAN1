@@ -1,0 +1,26 @@
+SINKRON GOOGLE SHEETS AMAN - SPPG SIWALAN 1
+
+1. Buka Google Sheets yang dipakai aplikasi.
+2. Extensions > Apps Script.
+3. Hapus kode lama, lalu tempel GOOGLE_APPS_SCRIPT.gs dari ZIP ini.
+4. Deploy > New deployment > Web app.
+5. Execute as: Me.
+6. Who has access: Anyone.
+7. Salin URL /exec.
+8. Di aplikasi > Google Sheets > masukkan URL tersebut > Simpan URL.
+9. Klik "Simpan ke Google" SATU KALI untuk mengisi Google Sheets dari data aplikasi jika spreadsheet masih kosong.
+10. Setelah itu Google Sheets dapat digunakan sebagai sumber data sinkronisasi.
+
+PERLINDUNGAN DATA:
+- Jika Google Sheets masih kosong, tombol "Muat dari Google" TIDAK akan menghapus data aplikasi.
+- Jika salah satu tab (BAHAN_BAKU, TRANSAKSI, atau PENERIMA) kosong, bagian yang kosong TIDAK akan menimpa data aplikasi.
+- Data hanya akan diganti pada bagian yang memang mempunyai data di Google Sheets.
+- Penyesuaian Stok tidak digunakan. Jenis transaksi hanya Masuk dan Keluar.
+
+PEMBARUAN STOK:
+- Ubah stok di tab BAHAN_BAKU.
+- Aplikasi membaca perubahan tersebut pada sinkronisasi otomatis sekitar 15 detik.
+
+CATATAN:
+- Jangan menghapus nama tab: BAHAN_BAKU, TRANSAKSI, PENERIMA, APP_STATE.
+- Jangan mengubah nama kolom.

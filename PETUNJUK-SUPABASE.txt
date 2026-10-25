@@ -1,0 +1,19 @@
+SPPG SIWALAN 1 — AKUN DAN DATA ONLINE
+
+1. Buka Supabase Dashboard untuk proyek SPPG-SIWALAN1.
+2. SQL Editor > New query, tempel seluruh isi supabase/schema.sql, lalu Run.
+3. Buka Project Settings > API. Salin Project URL dan anon/public key.
+4. Edit supabase-config.js, ganti nilai GANTI_DENGAN_SUPABASE_PROJECT_URL dan GANTI_DENGAN_SUPABASE_ANON_PUBLIC_KEY.
+   Gunakan anon/public key, JANGAN gunakan service_role key.
+5. Hosting ulang seluruh isi folder ini (termasuk supabase-config.js, manifest.webmanifest, icon.svg, sw.js dan folder supabase).
+   Jangan membuka index.html sebagai file://; gunakan hosting HTTPS seperti Netlify, Vercel, atau hosting web yang sudah dipakai.
+6. Untuk pembuatan akun awal, di Supabase Authentication > Sign In / Providers > Email, matikan Confirm email sementara agar alur admin pertama langsung masuk. Jika konfirmasi email tetap aktif, verifikasi email sebelum login.
+7. Buka aplikasi online. Buat admin pertama sekali saja. Setelah itu perangkat lain masuk dengan email dan kata sandi yang sama; jangan membuat admin baru.
+8. Jika proyek sudah memiliki akun lama di Authentication tetapi belum ada profil admin, jalankan setup admin dari halaman aplikasi dengan akun yang ingin dijadikan admin. Fungsi database menolak pembuatan admin kedua.
+9. Akun petugas: gunakan Daftar petugas dari layar login setelah admin pertama ada. Pendaftaran hanya memberi role petugas, tidak admin.
+
+PENTING TENTANG DATA LAMA:
+- Data lokal pada laptop asal tidak otomatis muncul di Supabase sebelum login ke versi aplikasi yang sudah diperbaiki. Pada login pertama, jika app_state belum ada, aplikasi akan mengunggah data lokal laptop tersebut.
+- Setelah data pertama tersinkron, Supabase menjadi sumber utama. Perangkat lain akan mengambil data cloud dan perubahan tersimpan online.
+- Sebelum pemasangan, lakukan Cadangkan Data dari aplikasi lama dan simpan file JSON sebagai pengaman.
+- Aplikasi saat ini menyimpan keseluruhan state di satu baris app_state. Karena itu akses tabel dibatasi ke pengguna terautentikasi; semua pengguna yang login dapat memperbarui data aplikasi. Gunakan hanya untuk staf yang dipercaya. Untuk pembatasan admin/petugas yang lebih rinci, perlu kebijakan per aksi/tabel.

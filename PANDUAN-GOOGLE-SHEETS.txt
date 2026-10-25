@@ -1,0 +1,21 @@
+PANDUAN GOOGLE SHEETS - SPPG SIWALAN 1
+
+1. Buka file TEMPLATE-GOOGLE-SHEETS-SPPG-SIWALAN1.xlsx lalu upload/convert ke Google Sheets.
+2. Jangan ubah nama tab: BAHAN_BAKU, TRANSAKSI, PENERIMA, APP_STATE.
+3. Jangan ubah nama kolom pada baris pertama.
+4. Tab BAHAN_BAKU adalah sumber stok utama aplikasi.
+5. Tab TRANSAKSI hanya memakai Jenis: Masuk atau Keluar. Penyesuaian Stok tidak digunakan.
+6. Buka Extensions > Apps Script pada Google Sheet tersebut.
+7. Ganti kode lama dengan GOOGLE_APPS_SCRIPT.gs dari paket aplikasi.
+8. Deploy > New deployment > Web app.
+9. Execute as: Me.
+10. Who has access: Anyone.
+11. Salin URL /exec.
+12. Di aplikasi buka Google Sheets, tempel URL /exec, lalu Simpan URL.
+13. Aplikasi membaca Google Sheets secara otomatis sekitar setiap 15 detik.
+
+PENTING:
+- Jika stok di BAHAN_BAKU diubah langsung, aplikasi mengikuti stok tersebut saat sinkronisasi.
+- Jika membuat transaksi dari aplikasi, gunakan tombol Simpan ke Google agar transaksi masuk ke spreadsheet.
+- Jangan mengubah nama kolom/tab.
+- Penyesuaian Stok sudah dihapus dari aplikasi dan template.

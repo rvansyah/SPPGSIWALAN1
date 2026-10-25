@@ -1,0 +1,14 @@
+{
+  "id": "./",
+  "name": "SPPG SIWALAN 1 - Portal MBG",
+  "short_name": "SPPG SIWALAN 1",
+  "description": "Portal manajemen stok dan penerima manfaat MBG",
+  "lang": "id-ID",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0d1d38",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
